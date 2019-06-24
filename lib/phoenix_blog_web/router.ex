@@ -17,6 +17,11 @@ defmodule PhoenixBlogWeb.Router do
     pipe_through :browser
 
     get "/", PageController, :index
+    get "/aboutme", PageController, :aboutme
+  end
+
+  scope "/api", PhoenixBlogWeb do
+    pipe_through :api
     resources "/articles", ArticleController, except: [:new, :edit]
   end
 

@@ -15,3 +15,15 @@ import "phoenix_html"
 //
 // Local files can be imported directly using relative paths, for example:
 // import socket from "./socket"
+
+var app = new Vue({
+    el: '[role="main"]',
+    data: {
+      articles: []
+    },
+    created: function() {
+      axios.get('/api/articles').then(function(response){
+        app.articles = response.data.data;
+      });
+    }
+});

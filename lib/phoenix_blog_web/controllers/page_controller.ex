@@ -4,4 +4,8 @@ defmodule PhoenixBlogWeb.PageController do
   def index(conn, _params) do
     render(conn, "index.html")
   end
+
+  def aboutme(conn, _params) do
+    render(conn, "aboutme.html")
+  end
 end
